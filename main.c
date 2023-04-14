@@ -142,11 +142,7 @@ int main(void)
 	int hashTableSize = 11;
 
     // initialize a hashTable, use calloc (so everything is assigned to NULL)
-	// hashTable = calloc(hashTableSize, sizeof(struct HashType));
-
-    hashTable = malloc(hashTableSize * sizeof(struct HashType));
-    for(int i = 0; i < hashTableSize; i++)
-        hashTable[i].record = NULL;
+	hashTable = calloc(hashTableSize, sizeof(struct HashType));
 
     // for each record in pRecords, insert it into the hash table using the insertRecord function
 	for(int i = 0; i < recordSz; i++)
@@ -161,10 +157,3 @@ int main(void)
 
     return 0;
 }
-
-/*
-TODO:
-	> FIX THE MEMORY ALLOCATION ON THE CONTENTS OF RECORDTYPE STRUCT
-	> FINISH LOOP IN LINE 150
-	> USE BREAKPOINTS IN LINES 147, 151, 154 FOR DEBUGGING
-*/ 
